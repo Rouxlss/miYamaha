@@ -1,29 +1,13 @@
 ;
-//asignar un nombre y version al cache
-
-const CACHE_NAME = 'v1_cache_miYamaha',
-urlsToCache = [
+//asignar un nombre y versión al cache
+const CACHE_NAME = 'v1_cache_programador_fitness',
+  urlsToCache = [
     './',
-    './Avenir.ttc',
-    './css/styles.css',
+    './style.css',
     './script.js',
-    './img/logo.png'
-]
-
-//durante la face de instalacion de genera en caché los activos estaticos
-
-self.addEventListener ( 'install', e => {
-
-    e.waitUntil(
-        caches.open( CACHE_NAME )
-        .then(cache=>{
-            return cache.addAll(urlsToCache)
-            .then(()=>self.skipWaiting())
-        })
-        .catch(err=>console.warn('Error al tratar de registar el sW'), err)
-    )
-
-} )
+    './img/ProgramadorFitness.png',
+    './img/favicon.png'
+  ]
 
 //durante la fase de instalación, generalmente se almacena en caché los activos estáticos
 self.addEventListener('install', e => {
